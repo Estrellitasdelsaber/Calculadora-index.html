@@ -1,66 +1,46 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#1a1a2e">
-    <title>Calculadora Científica Pro 2026</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding: 20px;
-        }
-        
-        .calculator {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 30px 20px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .display-container {
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 20px;
-            padding: 25px 20px;
-            margin-bottom: 25px;
-            min-height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .history {
-            font-size: 18px;
-            color: #888;
-            text-align: right;
-            min-height: 25px;
-            margin-bottom: 10px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        
-        .display {
-            font-size: 48px;
-            color: #ffffff;
-            text-align: right;
-            font-weight: 300;
-            word-wrap:
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calc</title>
+<style>
+body{margin:0;background:#111;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial}
+.calc{background:#222;padding:20px;border-radius:20px;width:300px}
+#d{width:100%;height:60px;font-size:32px;text-align:right;border:none;background:#333;color:#fff;border-radius:10px;padding:10px;margin-bottom:10px;box-sizing:border-box}
+.b{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+button{height:60px;font-size:22px;border:none;border-radius:10px;background:#444;color:#fff;cursor:pointer}
+button:active{background:#666}
+.o{background:orange}
+.e{background:green;grid-column:span 2}
+.c{background:red}
+.z{grid-column:span 2}
+</style>
+</head>
+<body>
+<div class="calc">
+<input id="d" readonly>
+<div class="b">
+<button class="c" onclick="d.value=''">C</button>
+<button onclick="d.value=d.value.slice(0,-1)">⌫</button>
+<button onclick="d.value+='%'">%</button>
+<button class="o" onclick="d.value+='/'">÷</button>
+<button onclick="d.value+='7'">7</button>
+<button onclick="d.value+='8'">8</button>
+<button onclick="d.value+='9'">9</button>
+<button class="o" onclick="d.value+='*'">×</button>
+<button onclick="d.value+='4'">4</button>
+<button onclick="d.value+='5'">5</button>
+<button onclick="d.value+='6'">6</button>
+<button class="o" onclick="d.value+='-'">-</button>
+<button onclick="d.value+='1'">1</button>
+<button onclick="d.value+='2'">2</button>
+<button onclick="d.value+='3'">3</button>
+<button class="o" onclick="d.value+='+'">+</button>
+<button class="z" onclick="d.value+='0'">0</button>
+<button onclick="d.value+='.'">.</button>
+<button class="e" onclick="try{d.value=eval(d.value)}catch{d.value='Error'}">=</button>
+</div>
+</div>
+</body>
+</html>
